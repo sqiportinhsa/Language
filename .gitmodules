@@ -1,0 +1,3 @@
+[submodule "SoftCPU"]
+	path = SoftCPU
+	url = https://github.com/sqiportinhsa/SoftCPU
