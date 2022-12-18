@@ -46,9 +46,11 @@ enum Operations {
 
 struct Tree_node {
     Node_type  type     = FIC;
+    
     Tree_node* right    = nullptr;
     Tree_node* left     = nullptr;
     Tree_node* parent   = nullptr;
+
     char*      origin   = nullptr;
 
     union Data {
