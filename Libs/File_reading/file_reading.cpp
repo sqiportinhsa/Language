@@ -2,6 +2,7 @@
 #include <sys/stat.h>
 #include <assert.h>
 #include <string.h>
+#include <ctype.h>
 
 #include "file_reading.hpp"
 
@@ -100,14 +101,14 @@ int get_val(char *ptr_to_first_elem, int *ptr_to_val) {
 void skip_spaces(char **pointer) {
     assert(pointer != nullptr && "pointer is nullptr");
 
-    for (; **pointer == ' '; ++(*pointer));
+    for (; isspace(**pointer); ++(*pointer));
 }
 
 size_t skip_spaces(char *pointer) {
     assert(pointer != nullptr && "pointer in nullptr");
 
     size_t i = 0;
-    for (; *(pointer + i) == ' '; ++i);
+    for (; isspace(*(pointer + i)); ++i);
 
     return i;
 }
